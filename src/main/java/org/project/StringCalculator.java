@@ -6,6 +6,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
+    private static int callCount = 0;
+
+    public static int GetCalledCount() {
+        return callCount;
+    }
+
     static int Add(String str){
 
         /*
@@ -125,6 +131,188 @@ public class StringCalculator {
          * ============================================
          */
 
+//        if (str.isEmpty())
+//            return 0;
+//
+//        int ans = 0;
+//        String delimiterPattern = ",|\n"; // Default delimiters
+//
+//        // Handle custom delimiter declaration
+//        if (str.startsWith("//")) {
+//            Matcher matcher = Pattern.compile("//(\\[.*?])+\\n").matcher(str);
+//            if (matcher.find()) {
+//                // Multi-character or multiple delimiters
+//                String delimiterSection = matcher.group();
+//                List<String> delimiters = new ArrayList<>();
+//                Matcher d = Pattern.compile("\\[(.*?)]").matcher(delimiterSection);
+//                while (d.find()) {
+//                    delimiters.add(Pattern.quote(d.group(1)));
+//                }
+//                delimiterPattern = String.join("|", delimiters);
+//                str = str.substring(matcher.end());
+//            } else {
+//                // Single-character delimiter
+//                delimiterPattern = Pattern.quote(String.valueOf(str.charAt(2)));
+//                str = str.substring(4);
+//            }
+//        }
+//        // Validate for invalid sequences like ",\n", "\n,", or customDelimiter + \n or \n + customDelimiter
+//        Pattern invalidPattern = Pattern.compile("(" + delimiterPattern + ")\\n|\\n(" + delimiterPattern + ")");
+//        Matcher invalidMatcher = invalidPattern.matcher(str);
+//        if (invalidMatcher.find()) {
+//            throw new IllegalArgumentException("Invalid input: contains misplaced delimiters");
+//        }
+//
+//        // Split using the final delimiter pattern
+//        String[] tokens = str.split(delimiterPattern + "|\n");
+//        List<Integer> negatives = new ArrayList<>();
+//        for (String token : tokens) {
+//            if (token.isEmpty())
+//                continue;
+//            int num = Integer.parseInt(token);
+//            if(num < 0)
+//                negatives.add(num);
+//            ans += num;
+//        }
+//        if (!negatives.isEmpty()) {
+//            throw new IllegalArgumentException("Negatives not allowed: " + negatives.toString().replaceAll("[\\[\\]]", ""));
+//        }
+//        return ans;
+
+        /*
+         * ============================================
+         * Version 5.0 – Track Method Invocation Count
+         * --------------------------------------------
+         * - Adds a method: public int GetCalledCount()
+         * - Tracks how many times the Add() method has been called
+         * - All previous features (custom delimiters, negatives, etc.) remain supported
+         * ============================================
+         */
+
+//        callCount++;
+//        if (str.isEmpty())
+//            return 0;
+//
+//        int ans = 0;
+//        String delimiterPattern = ",|\n"; // Default delimiters
+//
+//        // Handle custom delimiter declaration
+//        if (str.startsWith("//")) {
+//            Matcher matcher = Pattern.compile("//(\\[.*?])+\\n").matcher(str);
+//            if (matcher.find()) {
+//                // Multi-character or multiple delimiters
+//                String delimiterSection = matcher.group();
+//                List<String> delimiters = new ArrayList<>();
+//                Matcher d = Pattern.compile("\\[(.*?)]").matcher(delimiterSection);
+//                while (d.find()) {
+//                    delimiters.add(Pattern.quote(d.group(1)));
+//                }
+//                delimiterPattern = String.join("|", delimiters);
+//                str = str.substring(matcher.end());
+//            } else {
+//                // Single-character delimiter
+//                delimiterPattern = Pattern.quote(String.valueOf(str.charAt(2)));
+//                str = str.substring(4);
+//            }
+//        }
+//        // Validate for invalid sequences like ",\n", "\n,", or customDelimiter + \n or \n + customDelimiter
+//        Pattern invalidPattern = Pattern.compile("(" + delimiterPattern + ")\\n|\\n(" + delimiterPattern + ")");
+//        Matcher invalidMatcher = invalidPattern.matcher(str);
+//        if (invalidMatcher.find()) {
+//            throw new IllegalArgumentException("Invalid input: contains misplaced delimiters");
+//        }
+//
+//        // Split using the final delimiter pattern
+//        String[] tokens = str.split(delimiterPattern + "|\n");
+//        List<Integer> negatives = new ArrayList<>();
+//        for (String token : tokens) {
+//            if (token.isEmpty())
+//                continue;
+//            int num = Integer.parseInt(token);
+//            if(num < 0)
+//                negatives.add(num);
+//            ans += num;
+//        }
+//        if (!negatives.isEmpty()) {
+//            throw new IllegalArgumentException("Negatives not allowed: " + negatives.toString().replaceAll("[\\[\\]]", ""));
+//        }
+//        return ans;
+
+        /*
+         * ============================================
+         * Version 6.0 – Ignore Numbers Greater Than 1000
+         * --------------------------------------------
+         * - Any number > 1000 will be ignored in the sum
+         *   Example: "2,1001" → 2
+         * - All previous features remain supported:
+         *   - Custom delimiters (single, multi, multiple)
+         *   - Newline and comma delimiters
+         *   - Negative number validation
+         *   - Method call tracking via GetCalledCount()
+         * ============================================
+         */
+
+//        callCount++;
+//        if (str.isEmpty())
+//            return 0;
+//
+//        int ans = 0;
+//        String delimiterPattern = ",|\n"; // Default delimiters
+//
+//        // Handle custom delimiter declaration
+//        if (str.startsWith("//")) {
+//            Matcher matcher = Pattern.compile("//(\\[.*?])+\\n").matcher(str);
+//            if (matcher.find()) {
+//                // Multi-character or multiple delimiters
+//                String delimiterSection = matcher.group();
+//                List<String> delimiters = new ArrayList<>();
+//                Matcher d = Pattern.compile("\\[(.*?)]").matcher(delimiterSection);
+//                while (d.find()) {
+//                    delimiters.add(Pattern.quote(d.group(1)));
+//                }
+//                delimiterPattern = String.join("|", delimiters);
+//                str = str.substring(matcher.end());
+//            } else {
+//                // Single-character delimiter
+//                delimiterPattern = Pattern.quote(String.valueOf(str.charAt(2)));
+//                str = str.substring(4);
+//            }
+//        }
+//        // Validate for invalid sequences like ",\n", "\n,", or customDelimiter + \n or \n + customDelimiter
+//        Pattern invalidPattern = Pattern.compile("(" + delimiterPattern + ")\\n|\\n(" + delimiterPattern + ")");
+//        Matcher invalidMatcher = invalidPattern.matcher(str);
+//        if (invalidMatcher.find()) {
+//            throw new IllegalArgumentException("Invalid input: contains misplaced delimiters");
+//        }
+//
+//        // Split using the final delimiter pattern
+//        String[] tokens = str.split(delimiterPattern + "|\n");
+//        List<Integer> negatives = new ArrayList<>();
+//        for (String token : tokens) {
+//            if (token.isEmpty())
+//                continue;
+//            int num = Integer.parseInt(token);
+//            if(num < 0)
+//                negatives.add(num);
+//            else if (num <= 1000) ans += num;
+//        }
+//        if (!negatives.isEmpty()) {
+//            throw new IllegalArgumentException("Negatives not allowed: " + negatives.toString().replaceAll("[\\[\\]]", ""));
+//        }
+//        return ans;
+//    }
+
+        /*
+         * ============================================
+         * Version 7.0 – Handle Whitespace in Input
+         * --------------------------------------------
+         * - Trims whitespace around numbers and delimiters
+         *   Example: " 1 , 2 , 3 " → 6
+         * - Ensures robustness against user formatting issues
+         * - All previous features remain supported
+         * ============================================
+         */
+        callCount++;
         if (str.isEmpty())
             return 0;
 
@@ -161,12 +349,13 @@ public class StringCalculator {
         String[] tokens = str.split(delimiterPattern + "|\n");
         List<Integer> negatives = new ArrayList<>();
         for (String token : tokens) {
+            token = token.trim();
             if (token.isEmpty())
                 continue;
             int num = Integer.parseInt(token);
             if(num < 0)
                 negatives.add(num);
-            ans += num;
+            else if (num <= 1000) ans += num;
         }
         if (!negatives.isEmpty()) {
             throw new IllegalArgumentException("Negatives not allowed: " + negatives.toString().replaceAll("[\\[\\]]", ""));
